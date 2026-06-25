@@ -40,19 +40,15 @@ def menu_kasir():
     while True:
 
         print("\n===== MENU KASIR =====")
-        print("1. Lihat Produk")
-        print("2. Transaksi Penjualan")
-        print("3. Logout")
+        print("1. Transaksi Penjualan")
+        print("2. Logout")
 
         pilihan = input("Pilih menu : ")
 
         if pilihan == "1":
-            menu_produk()
-
-        elif pilihan == "2":
             transaksi_penjualan()
 
-        elif pilihan == "3":
+        elif pilihan == "2":
             print("Logout berhasil.")
             break
 
