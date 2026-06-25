@@ -119,6 +119,9 @@ def transaksi_penjualan():
         ))
 
     conn.commit()
+    print("\n===================================")
+    print("Transaksi berhasil disimpan.")
+    print("===================================")
     conn.close()
 
     print("Transaksi berhasil disimpan.")
