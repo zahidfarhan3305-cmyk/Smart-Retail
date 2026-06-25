@@ -5,8 +5,12 @@ def login():
 
     print("\n===== LOGIN SMART RETAIL =====")
 
-    username = input("Username : ")
-    password = input("Password : ")
+    username = input("Username : ").strip()
+    password = input("Password : ").strip()
+
+    if username == "" or password == "":
+        print("Username dan password tidak boleh kosong!")
+        return None
 
     cursor.execute(
         "SELECT role FROM users WHERE username=? AND password=?",
