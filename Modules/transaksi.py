@@ -32,8 +32,13 @@ def transaksi_penjualan():
             harga_jual = data[3]
             stok = data[4]
 
+            if jumlah <= 0:
+                print("Jumlah pembelian harus lebih dari 0.")
+                return
+
             if jumlah > stok:
-                print("ERROR: Stok tidak mencukupi!")
+                print("Stok tidak mencukupi.")
+                return
             else:
                 subtotal = harga_jual * jumlah
 
