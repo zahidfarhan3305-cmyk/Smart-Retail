@@ -27,7 +27,9 @@ def total_pendapatan():
 
     conn.close()
 
-    print("Total Pendapatan : Rp", total)
+    print("=" * 40)
+    print(f"Total Pendapatan : Rp {total:,}")
+    print("=" * 40)
 
 
 # Produk terlaris
