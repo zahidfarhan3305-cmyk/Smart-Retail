@@ -92,7 +92,7 @@ def export_csv():
 
     data = cursor.fetchall()
 
-    with open("laporan_penjualan.csv", "w", newline="") as file:
+    with open("Smart-Retail/laporan_penjualan.csv", "w", newline="") as file:
         writer = csv.writer(file)
 
         writer.writerow([
