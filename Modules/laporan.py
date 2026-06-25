@@ -144,6 +144,25 @@ def grafik_penjualan():
     else:
         print("Belum ada data penjualan.")
 
+def riwayat_transaksi():
+
+    conn, cursor = koneksi_db()
+
+    cursor.execute("""
+        SELECT *
+        FROM transaksi
+        ORDER BY id DESC
+    """)
+
+    data = cursor.fetchall()
+
+    print("\n===== RIWAYAT TRANSAKSI =====")
+
+    for transaksi in data:
+        print(transaksi)
+
+    conn.close()       
+
 
 # Menu laporan
 def menu_laporan():
@@ -157,6 +176,7 @@ def menu_laporan():
         print("4. Stok Hampir Habis")
         print("5. Export CSV")
         print("6. Grafik Penjualan")
+        print("7. Riwayat Transaksi")
         print("0. Kembali")
 
         pilihan = input("Pilih menu : ")
@@ -178,9 +198,12 @@ def menu_laporan():
 
         elif pilihan == "6":
             grafik_penjualan()
+        elif pilihan == "7":
+            riwayat_transaksi()
 
         elif pilihan == "0":
             break
 
         else:
             print("Pilihan tidak tersedia!")
+
