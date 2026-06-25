@@ -5,10 +5,18 @@ from Modules.database import koneksi_db
 def tambah_produk():
     conn, cursor = koneksi_db()
 
-    nama = input("Nama Produk : ")
+    nama = input("Nama Produk : ").strip()
+
+    if not nama:
+        print("Nama produk tidak boleh kosong!")
+        return
     harga_modal = int(input("Harga Modal : "))
     harga_jual = int(input("Harga Jual : "))
     stok = int(input("Stok : "))
+
+    if harga_jual <= 0 or stok < 0:
+        print("Harga dan stok tidak valid!")
+        return
 
     cursor.execute("""
     INSERT INTO produk (nama_produk, harga_modal, harga_jual, stok)

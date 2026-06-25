@@ -8,9 +8,9 @@ def login():
     username = input("Username : ").strip()
     password = input("Password : ").strip()
 
-    if username == "" or password == "":
-        print("Username dan password tidak boleh kosong!")
-        return None
+    if not username or not password:
+         print("Username dan password tidak boleh kosong!")
+         return None
 
     cursor.execute(
         "SELECT role FROM users WHERE username=? AND password=?",
